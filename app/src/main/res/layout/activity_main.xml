@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#242B2C"
+    tools:context=".MainActivity">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/cameraBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        android:onClick="captureImage"
+        android:visibility="visible"
+        app:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <FrameLayout
+        android:id="@+id/counter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/cameraBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+
+    <!--<Button
+        android:id="@+id/btnCount"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="344dp"
+        android:layout_marginRight="344dp"
+        android:layout_marginBottom="24dp"
+        android:background="#3F51B5"
+        android:onClick="sendImages"
+        android:text="Button"
+        android:textColor="#FFEBEE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" /> -->
+
+
+    <RelativeLayout
+        android:id="@+id/badge_layout"
+        android:layout_width="80dp"
+        android:layout_height="68dp"
+        android:layout_below="@+id/cameraBtn"
+        android:layout_alignRight="@id/cameraBtn"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:id="@+id/relative_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnCount"
+                android:layout_width="65dip"
+                android:layout_height="65dip"
+                android:background="@android:drawable/ic_menu_send"
+                android:onClick="sendImages" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/badge_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/relative_layout"
+            android:background="@drawable/badge_item_count"
+            android:text="0"
+            android:textColor="#FFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
